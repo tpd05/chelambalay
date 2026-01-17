@@ -6,9 +6,9 @@
     <meta name="description" content="Đặc sản Bắc Giang - Kẹo chè lam bà Lý - Sản phẩm đặc sản truyền thống">
     <title>Đặc sản Bắc Giang - Kẹo chè lam bà Lý</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -16,103 +16,121 @@
                     <img src="public/img/logo.png" alt="Kẹo chè lam bà Lý Logo">
                 </div>
                 <nav class="nav">
-                    <a href="#" class="nav-link active">Trang chủ</a>
+                    <a href="#order-form-card" class="nav-link">Đặt hàng</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Left: Content -->
                 <div class="hero-content">
+                    <div class="badge-trust">
+                        <i class="fas fa-check-circle"></i> Đảm bảo 100% Nguyên liệu sạch
+                    </div>
                     <h1 class="hero-title">Đặc sản Bắc Giang</h1>
                     <h2 class="hero-subtitle">Kẹo chè lam bà Lý - Hương vị truyền thống</h2>
                     <p class="hero-description">
-                        Kẹo chè lam bà Lý là đặc sản truyền thống của Bắc Giang, được làm từ
-                        nguyên liệu tự nhiên 100%, giữ trọn hương vị thuần khiết của quê hương.
+                        Thức quà quê dân dã, ngọt thanh vị mật mía, thơm nồng hương gừng già. 
+                        Món quà ý nghĩa tặng người thân, trọn vẹn tình quê hương.
                     </p>
         
                     <ul class="hero-features">
-                        <li> Nguyên liệu tự nhiên, không chất bảo quản, không đường hóa học</li>
-                        <li> Công thức gia truyền hơn 30 năm</li>
-                        <li> Vị ngọt thanh, thơm ngon khó quên</li>
-                        <li> Giao hàng toàn quốc, tận tâm phục vụ</li>
+                        <li><i class="fas fa-leaf"></i> Nguyên liệu tự nhiên, không chất bảo quản</li>
+                        <li><i class="fas fa-history"></i> Công thức gia truyền hơn 30 năm</li>
+                        <li><i class="fas fa-heart"></i> Vị ngọt thanh, dẻo thơm, không dính răng</li>
+                        <li><i class="fas fa-shipping-fast"></i> Giao hàng toàn quốc siêu tốc</li>
                     </ul>
-        
-                    <div class="hero-cta-mobile">
-                        <a href="#order-form" class="btn btn-primary">Đặt hàng ngay</a>
-                    </div>
                     
-                    <!-- Product Images Gallery -->
                     <div class="product-gallery">
                         <div class="gallery-item">
-                            <img src="public/img/sp1.jpg" alt="Sản phẩm 1">
+                            <img src="public/img/sp1.jpg" alt="Chè lam dẻo thơm">
                         </div>
                         <div class="gallery-item">
-                            <img src="public/img/sp2.jpg" alt="Sản phẩm 2">
+                            <img src="public/img/sp2.jpg" alt="Đóng gói cẩn thận">
                         </div>
                         <div class="gallery-item">
-                            <img src="public/img/sp3.jpg" alt="Sản phẩm 3">
+                            <img src="public/img/sp3.jpg" alt="Quà biếu sang trọng">
                         </div>
                     </div>
                 </div>
         
-                <!-- Right: Order Form (Desktop) -->
-                <div class="order-form-card">
+                <div class="order-form-card" id="order-form-card">
                     <img src="public/img/sale.png" alt="Khuyến mãi" class="sale-badge">
                     <div class="price-section">
+                        <div class="price-header">Ưu đãi hôm nay</div>
                         <div class="price-line">
-                            <span class="old-price">80k/1kg</span>
+                            <span class="old-price">80.000đ</span>
                             <span class="discount-badge">-6,25%</span>
                         </div>
-                        <div class="new-price">75k/1kg</div>
+                        <div class="new-price">75.000đ<span class="unit">/1kg</span></div>
                     </div>
-                    <h3 class="form-title">Mua ngay nhận ưu đãi</h3>
+                    
+                    <h3 class="form-title">Đặt hàng nhanh</h3>
+                    <p class="form-subtitle">Điền thông tin để được tư vấn miễn phí</p>
+
                     <form id="orderForm" class="order-form">
                         <div class="form-group">
-                            <label for="fullName">Họ và tên</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="Nhập họ và tên của bạn"
-                                aria-required="true">
+                            <label><i class="fas fa-box-open"></i> Chọn loại:</label>
+                            <div class="product-options">
+                                <label class="option-item">
+                                    <input type="radio" name="productType" value="500g" data-price="40000" onchange="updatePrice()">
+                                    <span class="opt-name">Túi 500g</span>
+                                    <span class="opt-price">40.000đ</span>
+                                </label>
+                                <label class="option-item selected">
+                                    <div class="save-tag">Tiết kiệm</div>
+                                    <input type="radio" name="productType" value="1kg" data-price="75000" checked onchange="updatePrice()">
+                                    <span class="opt-name">Túi 1kg</span>
+                                    <span class="opt-price">75.000đ</span>
+                                </label>
+                            </div>
                         </div>
         
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="email@example.com"
-                                aria-required="true">
+                            <label for="fullName"><i class="fas fa-user"></i> Họ và tên</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Ví dụ: Nguyễn Văn A" aria-required="true">
                         </div>
         
                         <div class="form-group">
-                            <label for="phone">Số điện thoại</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="0123 456 789" pattern="[0-9]{10,11}"
-                                aria-required="true">
+                            <label for="phone"><i class="fas fa-phone"></i> Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Ví dụ: 0981 234 567" pattern="[0-9]{10,11}" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-weight-hanging"></i> Số lượng (túi)</label>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" onclick="updateQuantity(-1)">-</button>
+                                <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
+                                <button type="button" class="qty-btn" onclick="updateQuantity(1)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="payment-method">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Thanh toán khi nhận hàng</span>
+                        </div>
+
+                        <div class="total-price-display">
+                            <span>Tổng tiền hàng:</span>
+                            <span id="totalPrice">75.000đ</span>
+                        </div>
+                        
+                        <div class="shipping-note">
+                            <i class="fas fa-truck"></i> Phí ship tính theo đơn vị vận chuyển
                         </div>
         
-                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
-                            Mua ngay
+                        <button type="submit" class="btn btn-primary btn-block btn-pulse" id="submitBtn">
+                            <span class="btn-text">ĐẶT MUA NGAY</span>
+                            <span class="btn-subtext">Người bán sẽ liên hệ lại với bạn</span>
                         </button>
                     </form>
-        
-                    <!-- Toast Notification -->
-                    <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
-                        <div class="toast-content">
-                            <svg class="toast-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                                <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                            <p class="toast-message">Thông tin của bạn đã được gửi shop sẽ liên hệ với bạn ngay bây giờ</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Showcase Section -->
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -121,32 +139,18 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Liên hệ với chúng tôi</h4>
+                    <h4>Liên hệ đặt hàng</h4>
                     <div class="footer-info">
                         <p>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                            <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61585460543021" target="_blank" rel="noopener noreferrer">Kẹo chè lam bà Lý</a>
+                            <i class="fab fa-facebook-square"></i>
+                            <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61585460543021" target="_blank">Kẹo chè lam bà Lý</a>
                         </p>
                         <p>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            <strong>Số điện thoại:</strong> <a href="tel:0981922581">098 192 25 81</a>
+                            <i class="fas fa-phone-alt"></i>
+                            <strong>Hotline/Zalo:</strong> <a href="tel:0981922581">098 192 25 81</a>
                         </p>
                         <p>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <strong>Email:</strong> <a href="mailto:Anhkhai0709@gmail.com">Anhkhai0709@gmail.com</a>
-                        </p>
-                        <p>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
+                            <i class="fas fa-map-marker-alt"></i>
                             <strong>Địa chỉ:</strong> Đồng Nội - Ngọc Thiện - Bắc Ninh
                         </p>
                     </div>
@@ -154,79 +158,156 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Kẹo chè lam bà Lý - Đặc sản Bắc Giang. All rights reserved.</p>
+                <p>&copy; 2026 Kẹo chè lam bà Lý.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Form Submission -->
-    <script>
-        // Google Apps Script Web App URL - CẬP NHẬT URL NÀY SAU KHI DEPLOY
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1X1TSQcgPMTg0irlkjxd4uukjWjqXY7ISVE3b9PmZMzFiUBDEM-Ud3p5Z_EQHI37fOA/exec';
+    <div class="mobile-bottom-bar">
+        <a href="tel:0981922581" class="bar-item call">
+            <i class="fas fa-phone-volume"></i> Gọi ngay
+        </a>
+        <a href="https://zalo.me/0981922581" target="_blank" class="bar-item zalo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" width="24"> Chat Zalo
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61585460543021" target="_blank" class="bar-item facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/640px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" width="24"> Facebook
+        </a>
+        <a href="#order-form-card" class="bar-item order">
+            <i class="fas fa-shopping-cart"></i> Đặt hàng
+        </a>
+    </div>
 
+    <div class="floating-group">
+        <a href="tel:0981922581" class="floating-btn btn-phone" data-tooltip="Gọi ngay: 0981.922.581">
+            <div class="pulse-ring"></div>
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://zalo.me/0981922581" target="_blank" class="floating-btn btn-zalo" data-tooltip="Chat Zalo">
+            <div class="pulse-ring" style="border-color: #0068ff;"></div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Chat Zalo">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61585460543021" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook Page">
+            <div class="pulse-ring" style="border-color: #1877f2;"></div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/640px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook Page">
+        </a>
+    </div>
+
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <p class="toast-message">Đặt hàng thành công! Người bán sẽ liên hệ cho bạn sớm nhất.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- CẤU HÌNH ---
+        // Thay link này bằng link Web App của bạn
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3-KqtNa87WP2mY2aMZGwJG5mOloC-miJfNRS5UnMAJxFMIPy1tbYlZQ4wCb_hXezhpA/exec';
+
+        // --- XỬ LÝ FORM & TÍNH TIỀN ---
         const orderForm = document.getElementById('orderForm');
         const submitBtn = document.getElementById('submitBtn');
         const toast = document.getElementById('toast');
+        const qtyInput = document.getElementById('quantity');
+        const totalPriceEl = document.getElementById('totalPrice');
+
+        function getCurrentPrice() {
+            const selectedOption = document.querySelector('input[name="productType"]:checked');
+            return parseInt(selectedOption.getAttribute('data-price'));
+        }
+
+        function updatePrice() {
+            document.querySelectorAll('.option-item').forEach(item => {
+                item.classList.remove('active-opt');
+                item.style.borderColor = '#e2e8f0';
+                item.style.backgroundColor = '#fff';
+            });
+            
+            const selectedRadio = document.querySelector('input[name="productType"]:checked');
+            if(selectedRadio) {
+                const parent = selectedRadio.parentElement;
+                parent.classList.add('active-opt');
+                parent.style.borderColor = '#f97316';
+                parent.style.backgroundColor = '#fff7ed';
+            }
+            
+            calculateTotal();
+        }
+
+        function updateQuantity(change) {
+            let currentQty = parseInt(qtyInput.value);
+            let newQty = currentQty + change;
+            if (newQty < 1) newQty = 1;
+            if (newQty > 100) newQty = 100;
+            qtyInput.value = newQty;
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let price = getCurrentPrice();
+            let quantity = parseInt(qtyInput.value);
+            let total = price * quantity;
+            totalPriceEl.textContent = total.toLocaleString('vi-VN') + 'đ';
+        }
+
+        updatePrice();
 
         orderForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Disable button và hiển thị loading
+            const originalBtnText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Đang gửi...';
+            submitBtn.innerHTML = '<span class="btn-text">ĐANG GỬI...</span>';
 
-            // Lấy dữ liệu form
+            const quantity = parseInt(qtyInput.value);
+            const price = getCurrentPrice();
+            const totalMoney = quantity * price;
+            const typeLabel = document.querySelector('input[name="productType"]:checked').value;
+
             const formData = {
                 fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
+                quantity: `${quantity} gói (${typeLabel})`,
+                totalMoney: totalMoney.toLocaleString('vi-VN') + 'đ',
                 timestamp: new Date().toLocaleString('vi-VN')
             };
 
             try {
-                // Gửi dữ liệu đến Google Sheets
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
 
-                // Hiển thị thông báo thành công
                 showToast();
-
-                // Reset form
                 orderForm.reset();
+                document.querySelector('input[value="1kg"]').checked = true;
+                qtyInput.value = 1;
+                updatePrice();
 
             } catch (error) {
                 console.error('Error:', error);
-                // Vẫn hiển thị toast (do no-cors không cho đọc response)
-                showToast();
-                orderForm.reset();
+                showToast(); 
             } finally {
-                // Enable lại button
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Mua ngay';
+                submitBtn.innerHTML = originalBtnText;
             }
         });
 
         function showToast() {
             toast.classList.add('show');
-            
-            // Tự động ẩn sau 5 giây
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
+            setTimeout(() => toast.classList.remove('show'), 6000);
         }
 
-        // Smooth scroll cho mobile CTA
-        document.querySelector('.hero-cta-mobile .btn')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.querySelector('.order-form-card').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'center'
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             });
         });
     </script>

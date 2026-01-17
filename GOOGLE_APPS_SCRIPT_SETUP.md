@@ -21,43 +21,36 @@
 
 ```javascript
 function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+
   try {
-    // Lấy spreadsheet hiện tại
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Orders');
-    
-    // Nếu chưa có sheet tên "Orders", tạo mới
+    var doc = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = doc.getSheetByName('Orders');
+
     if (!sheet) {
-      const newSheet = SpreadsheetApp.getActiveSpreadsheet().insertSheet('Orders');
-      newSheet.appendRow(['Họ và tên', 'Email', 'Số điện thoại', 'Thời gian']);
+      sheet = doc.insertSheet('Orders');
+      sheet.appendRow(['Thời gian', 'Họ và tên', 'Số điện thoại', 'Chi tiết đơn hàng', 'Tổng tiền']);
     }
-    
-    // Parse dữ liệu từ request
-    const data = JSON.parse(e.postData.contents);
-    
-    // Thêm dòng mới vào sheet
+
+    var data = JSON.parse(e.postData.contents);
+
     sheet.appendRow([
-      data.fullName || '',
-      data.email || '',
-      data.phone || '',
-      data.timestamp || new Date().toLocaleString('vi-VN')
+      "'" + data.timestamp,
+      data.fullName,
+      "'" + data.phone,
+      data.quantity,
+      data.totalMoney
     ]);
-    
-    // Trả về response thành công
-    return ContentService
-      .createTextOutput(JSON.stringify({ 
-        'result': 'success', 
-        'message': 'Dữ liệu đã được lưu' 
-      }))
+
+    return ContentService.createTextOutput(JSON.stringify({ result: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);
-      
-  } catch (error) {
-    // Trả về lỗi nếu có
-    return ContentService
-      .createTextOutput(JSON.stringify({ 
-        'result': 'error', 
-        'message': error.toString() 
-      }))
+
+  } catch (e) {
+    return ContentService.createTextOutput(JSON.stringify({ result: 'error', error: e }))
       .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
   }
 }
 
