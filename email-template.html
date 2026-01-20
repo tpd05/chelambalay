@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kẹo Chè Lam Bà Lý</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #E8DCC8;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #E8DCC8;
+        }
+        .view-browser {
+            background-color: #E8DCC8;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #666666;
+        }
+        .view-browser a {
+            color: #FF6B35;
+            text-decoration: underline;
+        }
+        .header {
+            background-color: #E8DCC8;
+            padding: 30px 20px 20px 20px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px;
+            margin: 0 auto;
+        }
+        .banner {
+            background-color: #FF6B35;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .banner p {
+            color: #ffffff;
+            margin: 5px 0 0 0;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .product-section {
+            background-color: #E8DCC8;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+        .price-badge {
+            display: inline-block;
+            background-color: #DC143C;
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .price-badge span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .price-info {
+            background-color: #FFE5B4;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .price-info p {
+            margin: 5px 0;
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price-info .old-price {
+            text-decoration: line-through;
+            color: #999999;
+        }
+        .order-info {
+            margin: 20px 0;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .order-info strong {
+            color: #FF6B35;
+        }
+        .content-section {
+            background-color: #E8DCC8;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .content-section h2 {
+            color: #333333;
+            font-size: 28px;
+            margin: 0 0 15px 0;
+            font-weight: normal;
+        }
+        .content-section p {
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+        }
+        .cta-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button a {
+            background-color: #2D5016;
+            color: #ffffff;
+            padding: 15px 50px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        .social-icons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 8px;
+            background-color: #333333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .footer-logo {
+            text-align: center;
+            padding: 30px 20px 20px 20px;
+        }
+        .footer-logo img {
+            max-width: 150px;
+        }
+        .footer {
+            background-color: #E8DCC8;
+            color: #666666;
+            padding: 20px 20px 30px 20px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #FF6B35;
+            text-decoration: underline;
+        }
+        .app-download {
+            text-align: center;
+            padding: 20px;
+        }
+        .app-download img {
+            max-width: 140px;
+            margin: 10px;
+        }
+        @media only screen and (max-width: 600px) {
+            .banner h1 {
+                font-size: 28px;
+            }
+            .banner p {
+                font-size: 14px;
+            }
+            .price-badge {
+                font-size: 20px;
+                padding: 12px 20px;
+            }
+            .content-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- View in Browser -->
+        <div class="view-browser">
+            Click here to view it in your browser
+        </div>
+
+        <!-- Header with Logo -->
+        <div class="header">
+            <img src="https://via.placeholder.com/150x150/E8DCC8/8B4513?text=Logo" alt="Kẹo Chè Lam Bà Lý" class="logo">
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <h1>Kẹo Chè Lam Bà Lý</h1>
+            <p>Đặc Sản Bắc Giang</p>
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-section">
+            <!-- Thay thế bằng hình ảnh sản phẩm thực tế -->
+            <img src="https://via.placeholder.com/500x300/E8DCC8/666666?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m" alt="Kẹo Chè Lam Bà Lý" class="product-image">
+            
+            <div class="price-badge">
+                40K
+                <span>/500g</span>
+            </div>
+            
+            <div class="price-info">
+                <p>Giá chỉ còn <strong style="color: #DC143C; font-size: 20px;">75K</strong></p>
+                <p>khi mua bộ</p>
+            </div>
+            
+            <div class="order-info">
+                <p><strong>Inbox đặt hàng ngay</strong></p>
+                <p>Facebook: Kẹo chè lam bà lý</p>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <h2>It's time to design your email</h2>
+            <p>
+                You can define the layout of your email and style your content in a live by 
+                adding and editing reusable content blocks.
+            </p>
+
+            <!-- CTA Button -->
+            <div class="cta-button">
+                <a href="#">Add button text</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <img src="https://via.placeholder.com/150x150/E8DCC8/8B4513?text=Logo" alt="Kẹo Chè Lam Bà Lý">
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Copyright © 2026 "*|LIST:COMPANY|*" "*|LIST:ADDRESS|*" All rights reserved.</p>
+            <p>*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*</p>
+            <p style="margin-top: 15px;">
+                Our mailing address is:<br>
+                *|HTML:LIST_ADDRESS_HTML|* *|END:HTML|*
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Want to change how you receive these emails?</strong><br>
+                You can <a href="#">update your preferences</a> or <a href="#">unsubscribe from this list</a>
+            </p>
+        </div>
+
+        <!-- App Download -->
+        <div class="app-download">
+            <a href="#"><img src="https://via.placeholder.com/140x50/000000/ffffff?text=App+Store" alt="Download on App Store"></a>
+        </div>
+    </div>
+</body>
+</html>
